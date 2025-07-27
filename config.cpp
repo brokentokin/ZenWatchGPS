@@ -163,4 +163,7 @@ class CfgVehicles
         };
 		soundImpactType="plastic";
     };
+	class ZenWatchGPS_NoTime: ZenWatchGPS
+    {
+	};
 };
