@@ -66,10 +66,29 @@ class ZenWatchGPS extends Clothing
 		string cfgPath = "CfgVehicles " + GetType();
 		GetGame().ConfigGetText(cfgPath + " descriptionShort", output);
 
-		int hour, minute, second;
-		GetHourMinuteSecond(hour, minute, second);
+		if (GetHealthLevel() >= GameConstants.STATE_DAMAGED)
+		{
+			output = output + " #STR_ZenWatch_Damaged";
+			return true;
+		}
 
-		output = output + " #STR_ZenWatchTime " + hour + ":" + minute;
+		bool isNight = GetGame().GetWorld().IsNight();
+		string daytime = "#STR_ZenWatch_Day";
+		if (isNight)
+			daytime = "#STR_ZenWatch_Night";
+
+		int year, month, day, hour, minute;
+        GetGame().GetWorld().GetDate(year, month, day, hour, minute);
+
+		string hourPreStr = "";
+		if (hour <= 9)
+			hourPreStr = "0";
+
+		string minPreStr = "";
+		if (minute <= 9)
+			minPreStr = "0";
+
+		output = output + " #STR_ZenWatchTime " + hourPreStr + hour + ":" + minPreStr + minute + " " + daytime + ".";
 		return true;
 	}
 
