@@ -6,7 +6,9 @@ The watch acts as both a vanilla compass and a GPS in terms of map behaviour.
 
 So if the server has turned on displaying your location with a GPS then this watch will display your position.
 
-It uses pure vanilla code to behave as a GPS so it should be compatible with any mod which checks vanilla code for the compass and GPS item (so it does work with Expansion, not sure about other map mods as I haven't tested it and don't have time to make it compatible for all the various map mods).
+It uses vanilla code to behave as a GPS, so it should be compatible with mods which check vanilla code for the compass and GPS item.
+
+When DayZ Expansion Navigation is loaded, a powered watch also satisfies Expansion's GPS and compass item requirements, including the GPS mini-map and compass HUD. Load this mod after Expansion when using these features. Expansion is optional and is not required for vanilla navigation.
 
 [h1]3D Model Credit & License:[/h1]
 
